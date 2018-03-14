@@ -1,4 +1,4 @@
 #!/bin/bash -ex
 
-cd libcouchbase && mkdir build && cd build
-../cmake/configure && make
+mkdir build && cd build
+cmake -DLCB_NO_TESTS=1 .. && make

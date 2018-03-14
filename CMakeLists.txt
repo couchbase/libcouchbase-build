@@ -13,7 +13,9 @@ ENDIF (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 
 # Save CMAKE_INSTALL_PREFIX to temp variable, then set for deps
 SET(TempCMakeInstall "${CMAKE_INSTALL_PREFIX}")
-SET(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/depbuild" FORCE)
+SET(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/depbuild" CACHE STRING
+    "Temp install location" FORCE)
+LIST(APPEND CMAKE_PREFIX_PATH "${CMAKE_BINARY_DIR}/depbuild")
 
 # Configure tlm the way it wants to be configured
 SET (CB_DOWNLOAD_DEPS 1)

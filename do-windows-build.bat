@@ -1,4 +1,3 @@
-cd libcouchbase
 mkdir build
 cd build
 cmake -G "%MSVS_VERSION%" .. || goto error

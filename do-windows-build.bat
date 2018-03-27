@@ -1,6 +1,6 @@
 mkdir build
 cd build
-cmake -G "%MSVS_VERSION%" .. || goto error
+cmake -DLCB_NO_TESTS=1 -G "%MSVS_VERSION%" .. || goto error
 cmake -DLCB_NO_TESTS=1 --build . || goto error
 
 goto :eof
